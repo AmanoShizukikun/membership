@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員系統首頁</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block title %}會員系統首頁{% endblock %}
+
+    {% block content %}
+    <h1 class="text-center">會員系統首頁</h1>
+    <p class="text-center">歡迎來到會員系統，請選擇以下操作</p>
+    <div class="d-flex justify-content-center">
+        <a href="{{ url_for('login') }}" class="btn btn-primary m-2">登入</a>
+        <a href="{{ url_for('register') }}" class="btn btn-success m-2">註冊</a>
+    </div>
+    {% if error_message %}
+        <div class="alert alert-danger mt-3">{{ error_message }}</div>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
